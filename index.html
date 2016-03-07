@@ -1,33 +1,36 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-	<head>
-		<link rel="stylesheet" type="text/css" href="/css/main.css">
-		<title>Adbul Moeed The Programmer </title>
-	</head>
-	<body>
-		
-		
+  <head>
+    <link href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
 
-		<nav>
-    		<ul>
-        		<li><a href="/">Home</a></li>
-	        	<li><a href="/about">About</a></li>
-        		<li><a href="/cv">CV</a></li>
-        		<li><a href="/blog">Blog</a></li>
-    		</ul>
-		</nav>
-		<div class="container">
-    		<div class="blurb">
-        		<h1>Hi there, I'm Abdul Moeed!</h1>
-			<php> 
-			<echo>I'm best known as the horrible cop from <em>A Touch of Evil</em> Don't trust me. <a href="www.google.com">R ad more about my life...</echo></php>
-    		</div><!-- /.blurb -->
-		</div><!-- /.container -->
-		<footer>
-    		<ul>
-        		<li><a href="mailto:abdulfastian1@gmail.com">email</a></li>
-        		<li><a href="https://github.com/moidrao1">github.com/moidrao1</a></li>
-			</ul>
-		</footer>
-	</body>
+    <!-- Include the AngularJS library -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+  </head>
+  <body ng-app="AppMarketApp">
+    <div class="header">
+      <div class="container">
+        <h1>App Market</h1>
+      </div>
+    </div>
+
+    <div class="main" ng-controller="MainController">
+      <div class="container">
+         <div class="card" ng-repeat="app in apps">
+          <app-info info="app"></app-info>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modules -->
+    <script src="js/app.js"></script>
+
+    <!-- Controllers -->
+    <script src="js/controllers/MainController.js"></script>
+
+    <!-- Directives -->
+    <script src="js/directives/appInfo.js"></script>
+
+
+  </body>
 </html>
